@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Ghul",
+        "weaknesses": [
+            "srebro",
+            "ogień"
+        ]
+    },
+    {
+        "name": "Troll",
+        "weaknesses": [
+            "kwas",
+            "magia"
+        ]
+    }
+]

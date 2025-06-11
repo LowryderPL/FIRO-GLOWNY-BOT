@@ -1,0 +1,23 @@
+{
+    "world_name": "Świat Firos",
+    "regions": [
+        {
+            "id": "zerywia",
+            "name": "Zerywia",
+            "type": "Cytadela",
+            "faction": "Redania"
+        },
+        {
+            "id": "rybeck",
+            "name": "Rybeck",
+            "type": "Twierdza",
+            "faction": "Kaedwen"
+        },
+        {
+            "id": "swarzogowa",
+            "name": "Swarzogowa",
+            "type": "Ruinic Territory",
+            "faction": "Nekromanci"
+        }
+    ]
+}

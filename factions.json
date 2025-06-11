@@ -1,0 +1,20 @@
+[
+    {
+        "id": "redania",
+        "name": "Redania",
+        "bonus": "+10% obrona",
+        "style": "military"
+    },
+    {
+        "id": "kaedwen",
+        "name": "Kaedwen",
+        "bonus": "+5% uniki",
+        "style": "forest"
+    },
+    {
+        "id": "nekromanci",
+        "name": "Nekromanci",
+        "bonus": "+15% zaklęcia",
+        "style": "dark magic"
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "id": "nft001",
+        "name": "Miecz Władzy",
+        "rarity": "epic"
+    },
+    {
+        "id": "nft002",
+        "name": "Amulet Mgły",
+        "rarity": "rare"
+    }
+]

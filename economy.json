@@ -1,0 +1,10 @@
+{
+    "currency": [
+        "RFN",
+        "TON"
+    ],
+    "taxes": {
+        "trade": 0.12,
+        "nft": 0.15
+    }
+}
