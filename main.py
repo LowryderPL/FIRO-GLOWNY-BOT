@@ -1,23 +1,32 @@
-import os
-import logging
-from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
-TOKEN = os.getenv("BOT_TOKEN")
+app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+@app.get("/", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("👋 Witaj w Świecie Firos: Magic & Magic!\nRozpocznij swoją przygodę wpisując /quest")
+@app.get("/map", response_class=HTMLResponse)
+async def map_view(request: Request):
+    return templates.TemplateResponse("map.html", {"request": request})
 
-async def quest(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("🧙‍♂️ Rozpoczynasz pierwszy quest...\nZabij szczura w piwnicy!")
+@app.get("/faction", response_class=HTMLResponse)
+async def faction_view(request: Request):
+    return templates.TemplateResponse("faction.html", {"request": request})
 
-def main():
-    application = ApplicationBuilder().token(TOKEN).build()
-    application.add_handler(CommandHandler("start", start))
-    application.add_handler(CommandHandler("quest", quest))
-    application.run_polling()
+@app.get("/bestiary", response_class=HTMLResponse)
+async def bestiary_view(request: Request):
+    return templates.TemplateResponse("bestiary.html", {"request": request})
 
-if __name__ == "__main__":
-    main()
+@app.get("/alchemy", response_class=HTMLResponse)
+async def alchemy_view(request: Request):
+    return templates.TemplateResponse("alchemy.html", {"request": request})
+
+@app.get("/inventory", response_class=HTMLResponse)
+async def inventory_view(request: Request):
+    return templates.TemplateResponse("inventory.html", {"request": request})
